@@ -27,4 +27,42 @@ function addUpToR(m){
   }
 }
 
-console.log(addUpToR(5))
+console.log(addUpToR(5));
+
+
+function countUpDown(p){
+    console.log("Going up....");
+    for(let i = 0; i <= p; i++){
+        console.log(i);
+    }
+    console.log("Going Down back...\n see you there");
+    for(let i = p - 1; i >= 0; i--){
+        console.log(i);
+    }
+    console.log("Reached to the bottom back")
+}
+
+console.log(countUpDown(10));
+
+
+
+let entry = ["apple", "banana"];
+const fruits = entry.entries();
+
+for(let x of fruits){
+      document.getElementById("entries").innerHTML += x + "<br>"
+}
+
+
+// bring all the ages over 18 from the array
+
+let ages = [13, 15, 16, 18, 20 , 23, 30];
+
+function over18(age){
+    return age >= document.getElementById("ageInput").value;
+}
+
+function myAge(){
+     document.querySelector(".ageNumber").innerHTML = ages.filter(over18)
+}
+
