@@ -1,5 +1,5 @@
 let str = "apple";
-
+  str[3] = "l";
 function reverse(str){
   let Rstr = "";
   for(let i = str.length - 1; i >= 0; i--){
@@ -20,10 +20,12 @@ function addUpTo(n){
 
 console.log(addUpTo(5))
 
+
+// add upto m number recursively
 function addUpToR(m){
   if(m === 0)return 0;
   else {
-    return  m + addUpToR(m-1)
+    return  m + addUpToR(m-1)             //  =>  m + m-1 + m-2 + m-3 + m-4  ...
   }
 }
 
@@ -42,7 +44,7 @@ function countUpDown(p){
     console.log("Reached to the bottom back")
 }
 
-console.log(countUpDown(10));
+countUpDown(10);
 
 
 
