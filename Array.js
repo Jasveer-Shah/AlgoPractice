@@ -134,3 +134,28 @@ function getFactorial(n){
 
 console.log(getFactorial(5));      // 5*4*3*2*1  = 120
 
+
+
+// find the min max sum of 4 items from an array(its length is 5), seperated by comma
+
+let integerArr = [1, 2, 3, 5, 4];
+
+function getMinmax(arr){
+    let min = 0;
+    let max = 0;
+     arr = arr.sort();
+     arr.forEach((element, i) => {
+         if(i == 0){
+             min += element;
+         }else if(i == arr.length -1){
+             max += element;
+         }else {
+             min += element;
+             max += element;
+         }
+     });
+
+    console.log(min + " " + max);
+}
+
+getMinmax(integerArr)               // output should be  10 14
