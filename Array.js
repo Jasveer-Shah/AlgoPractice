@@ -50,3 +50,87 @@ removeDuplicates(numberArray)
 
 
 //console.log(uniqueArray)
+
+// checkeven number
+
+function checkeven(n){
+    switch (n) {
+        case 0:
+        case 2:
+            return "this is even";
+            case 1:
+                return "this is odd";
+    }
+    return checkeven(n % 2);
+}
+
+console.log(checkeven(9));
+console.log(checkeven(4));
+
+
+// find second largest number in the array
+
+let numberArr = [1, 4, 5, 8, 4, 9, 55];
+function secLargN(arr){
+    let max = 0;
+    let secMax = 0;
+
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] > max){
+            secMax = max;
+            max = arr[i]
+        }else if(arr[i] < max && arr[i] > secMax){
+            secMax = arr[i]
+        }
+    }
+    return secMax;
+}
+console.log(secLargN(numberArr));
+
+
+// fill the # with correct value
+let matrix = [
+    [1, 2, "#"],
+    ["#", 16, 32],
+    [64, "#", 256]
+];
+
+let index = 0;
+
+for(let i = 0; i < matrix.length; i++){
+    for( j = 0; j < matrix[i].length; j++){
+        if(matrix[i][j] == "#"){
+            matrix[i][j] = 2 ** index
+        }
+        index++;
+    }
+}
+
+console.log(matrix);
+
+// check if a number in the array is even or odd
+let myArray = [ 3, 4, 55, 6, 66, 76, 45, 8, 12, 7];
+
+for(let i = 0; i < myArray.length; i++){
+    if(myArray[i] % 2 == 0){
+        console.log(`${myArray[i]} is even`);
+    }else {
+        console.log(`${myArray[i]} is odd`)
+    }
+}
+
+
+//make a recursive function to get factorial for a given integer
+
+function getFactorial(n){
+    //edge case
+ if(n === 1) {
+        return 1;
+    } else {
+        return n * getFactorial(n - 1);
+    }
+
+}
+
+console.log(getFactorial(5));      // 5*4*3*2*1  = 120
+
