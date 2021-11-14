@@ -159,3 +159,69 @@ function getMinmax(arr){
 }
 
 getMinmax(integerArr)               // output should be  10 14
+
+
+
+
+// Bubble Sort 
+// write a function that takes in an array of integers ans returns sorted array
+
+let unsortedArr = [ 3, 2, 9, 4, 19, 10];
+
+function bubbleSort(arr) {
+    for(let i = 0; i < arr.length; i++){      // outer for loop
+        for(let j = 0; j < arr.length; j++){   // inner for loop
+            if(arr[j] > arr[j + 1]){
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    return arr
+}
+
+console.log(bubbleSort(unsortedArr));
+
+
+// add up to with two methods for space complexity
+
+function addUpTo(m){
+    return m * (m + 1) / 2;                    // o(1)
+    }
+
+ function addWUpTo(w){
+     let total = 0;                              // o(n)
+     for(let  i = 0; i < w; i++){
+         total += i;
+     }
+     return total;
+ }  
+ 
+ 
+ // selection sort
+
+ // first we create a variable that stores the first item`s value as minimum to initialize the sorting from a point
+ // then we are gonna check in each iteration if the next value is smaller then the our current value, if it is then we are gonna swap the indexes
+// if it is not smaller the keep going untillthe end of the array
+
+let selectionArr = [23, 4, 67, 3, 90, 7];
+
+function selectionSort(arr){
+    for(let  i = 0; i < arr.length; i++){
+        var min = i;            // i = 0; starting index
+        for(let j = i + 1; j < arr.length; j++){
+            if(arr[j] < arr[min]){
+                min = j;    // now i = 1, so now its gonna go in the for loop and compare between  index i = 1 and index j = i + 1 and so forth till the end of the array
+            }// so in the first iteration we got min index = 3 so now we are gonna swap the indexes after finishing this inner loop
+        
+        }
+       let temp = arr[i];
+       arr[i] = arr[min];
+       arr[min] = temp;
+    }
+    return arr
+}
+
+console.log(selectionSort(selectionArr));
+
