@@ -225,3 +225,22 @@ function selectionSort(arr){
 
 console.log(selectionSort(selectionArr));
 
+
+
+
+// remove duplicates from an array without taking extra space in memory
+
+let dupArray = [3, 3, 6, 12, 12, 5, 7, 3, 90, 56, 90];
+
+function removeDuplicates(arr){
+    for(let i = 0; i < arr.length; i++){
+        for(let j = 0; j < arr.length; j++){
+            if(arr[j] == arr[i] && j != i) {
+                arr.splice(j, 1);               // remove the item from the array
+            }
+        }
+    }
+    return arr;
+}
+
+console.log(removeDuplicates(dupArray));
