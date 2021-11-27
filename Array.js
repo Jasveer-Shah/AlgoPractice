@@ -201,7 +201,7 @@ function addUpTo(m){
  
  // selection sort
 
- // first we create a variable that stores the first item`s value as minimum to initialize the sorting from a point
+ // first we create a variable that stores the first item`s index as minimum to initialize the sorting from a point
  // then we are gonna check in each iteration if the next value is smaller then the our current value, if it is then we are gonna swap the indexes
 // if it is not smaller the keep going untillthe end of the array
 
@@ -244,3 +244,22 @@ function removeDuplicates(arr){
 }
 
 console.log(removeDuplicates(dupArray));
+
+
+
+// make a function that takes an array and gives back an two diamentional array with the given number of spliting
+
+
+let oneDiaMentional = [1, 3, 5, 6, 7, 8, 9, 10, 11, 14, 45, 56, 76, 68];
+
+function twoDiaMentional(arr, num) {
+    let twoDia = [];
+
+    for(let i = 0; i < arr.length; i += num){
+         twoDia.push(arr.splice(i, i+num));
+    }
+
+    return twoDia;
+}
+
+console.log(twoDiaMentional(oneDiaMentional, 2));
