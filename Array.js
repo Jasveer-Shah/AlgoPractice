@@ -248,18 +248,63 @@ console.log(removeDuplicates(dupArray));
 
 
 // make a function that takes an array and gives back an two diamentional array with the given number of spliting
-
+// here i`m using slice method it returns a shallow copy of an array into a new array object selected from 
+// start to end (end not included), where start and end represent the index of the items in that array
 
 let oneDiaMentional = [1, 3, 5, 6, 7, 8, 9, 10, 11, 14, 45, 56, 76, 68];
 
 function twoDiaMentional(arr, num) {
     let twoDia = [];
 
-    for(let i = 0; i < arr.length; i += num){
-         twoDia.push(arr.splice(i, i+num));
+    for(let i = 0; i < arr.length; i+= num){
+         twoDia.push(arr.slice(i, i+num));
     }
 
     return twoDia;
 }
 
 console.log(twoDiaMentional(oneDiaMentional, 2));
+
+
+
+// add numbers of the array by recursive function
+
+function recFun(arr){
+    if(arr.length === 1){
+        return arr[0];
+    }else{
+        return arr.pop() + recFun(arr);
+    }
+}
+
+recFun([1, 2, 3, 4]);
+console.log(recFun([1, 2, 3, 4]));
+
+
+
+// get diagonal sum recursively
+
+let matrixm = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+let maxR = matrix.length - 1; // 2
+let maxC = matrix[0].length - 1; // 2
+function getDiagonalSum1 (maxR, maxC) {
+     if(maxR === 0 && maxC === 0) return matrixm[0][0];
+     
+     return matrixm[maxR][maxC] + getDiagonalSum1(maxR - 1, maxC - 1);
+}
+
+
+function getDiagonalSum2 (maxR) {
+    if (maxR === 0) return matrix[0][2 - maxR];
+
+    return matrixm[maxR][2 - maxR] + getDiagonalSum2(maxR - 1);
+}
+
+let getSum = Math.abs(getDiagonalSum1(maxR, maxC) - getDiagonalSum2(maxR));
+
+console.log("getDiagonalSum:   ", getSum);

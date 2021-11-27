@@ -64,3 +64,45 @@ var x = {
                                  //arguments is here array like object, so below in the method
                                  // we are passing 2 arguments 1 = y, 2 = 1 and as y is passed here it will check the length of the array
 x.method(y, 1);                // output should be 2
+
+
+
+// make a function that checks if two objects are identical or not
+
+let obj1;
+let obj2;
+
+function checkifIdentical(obj1, obj2) {
+    let keys1 = Object.keys(obj1);
+    let keys2 = Object.keys(obj2);
+
+    if(keys1.length !== keys2.length){
+        return false;
+    }
+    for(let key of keys1) {
+        if(obj1[key] !== obj2[key]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// test 1
+let objA = {
+    a : "hello",
+    b: "bye"
+}
+
+let objB = {
+    a : "2",
+    b: "3"
+}
+
+console.log(checkifIdentical(objA, objB))
+
+// test2
+let objK = { 1: 33, 2: 22}
+let objM = { 1: 33, 2: 22}
+
+console.log(checkifIdentical(objK, objM))
+
