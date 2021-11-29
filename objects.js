@@ -106,3 +106,20 @@ let objM = { 1: 33, 2: 22}
 
 console.log(checkifIdentical(objK, objM))
 
+
+
+// make a function that changes an object to a two diamentional array
+
+let newArray = (obj) => {
+    let keys = Object.keys(obj);
+    let newarr = [];
+    for(let i = 0; i < keys.length; i++){
+        newarr.push([keys[i], obj[keys[i]]]);
+    }
+   return newarr;
+}
+
+console.log(newArray({
+    1 : "angel",
+    2: "pari"
+}))

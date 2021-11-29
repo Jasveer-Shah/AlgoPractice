@@ -308,3 +308,40 @@ function getDiagonalSum2 (maxR) {
 let getSum = Math.abs(getDiagonalSum1(maxR, maxC) - getDiagonalSum2(maxR));
 
 console.log("getDiagonalSum:   ", getSum);
+
+
+
+// find the missing number from an array of integers
+
+let arrayS = [0, 1, 3];
+// this array nas n = 3 , so range is 0 to 3 and missing number between the range is 2
+
+let missingNumber = (arrayS) => {
+    // sum of 1 to n is n times  n+ 1 / 2
+     
+    const n = arrayS.length;
+    const sum = (n * (n + 1)) / 2;
+
+    return sum - arrayS.reduce((a, b) => a + b);
+} 
+
+console.log(missingNumber(arrayS))
+
+
+
+// a left rotation on an array, it shifts each element in the array to left
+// given an array a of intergers and a number, d, perform d left rotaions on the array
+// return updated array to be printed as a single line of space-separated integers.
+
+let arrayI = [1, 2, 3, 4, 5];
+
+function leftShift(arr, d){
+   
+    for(let i = 0; i < d; i++){
+        const shiftedItem = arr.shift();
+        arr.push(shiftedItem);
+    }
+    return arr;
+}
+
+console.log(leftShift(arrayI, 3))    //output =  [4, 5, 1, 2, 3]
