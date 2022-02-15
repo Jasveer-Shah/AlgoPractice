@@ -345,3 +345,29 @@ function leftShift(arr, d){
 }
 
 console.log(leftShift(arrayI, 3))    //output =  [4, 5, 1, 2, 3]
+
+
+// what will be the output of the following Javascript code?
+
+x = 1;
+console.log('x = ' + x);
+var x;
+
+for(let b = 1; b < 5; b++){
+    console.log(b);
+}
+
+// What is eval() in javascript
+// it executes specified string as javascript code.
+
+function doSomething() {
+    console.log(this);
+  }
+          
+  doSomething();
+
+  let xo = 5;
+  let yo = 8;
+  alert(xo++  -  ++yo);
+  console.log("xo is:", xo++);
+  console.log( "yo is: ", ++yo);
