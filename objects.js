@@ -122,4 +122,14 @@ let newArray = (obj) => {
 console.log(newArray({
     1 : "angel",
     2: "pari"
-}))
+}));
+
+
+// call, bind and Apply
+
+var person = {
+    name: "Jasveer",
+    hello: function (arg){
+        console.log(this.name + " says Hello" + arg) 
+    }
+}

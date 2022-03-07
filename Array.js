@@ -371,3 +371,41 @@ function doSomething() {
   alert(xo++  -  ++yo);
   console.log("xo is:", xo++);
   console.log( "yo is: ", ++yo);
+
+// Flatten the array    // depth 
+let UnflatedArr = [
+    [1, 2],
+    [3, 4],
+    [5, 6],
+    [7, 8, [9, 10]]
+];
+
+function customFlat(UnflatedArr, depth = 1){
+    let result = [];
+    UnflatedArr.forEach((arr) => {
+        if(Array.isArray(arr) && depth > 0){
+            result.push(...customFlat(arr, depth - 1));
+        }else {
+            result.push(arr);
+        }
+    })
+    return result;
+}
+console.log(customFlat(UnflatedArr, 1));
+console.log(customFlat(UnflatedArr, 2));
+
+
+// make a programme that brings the items of the original array into a 2d array
+// your result should be [['Amazon', 'Ecommerce], ['Disney', Entertainment], ['Tesla', 'Innovation]]
+let brands = [
+    'Amazon', 'Tesla', "Disney", "Entertainment", "Ecommerce", "Innovation"
+]
+
+let newBrands = [];
+for(let i = 0; i < 3; i++){
+    if(i + 4 < brands.length){
+        newBrands.push([brands[i], brands[i + 4]])
+    } else {
+        newBrands.push([brands[i], brands[i + 1]])
+    }
+}
