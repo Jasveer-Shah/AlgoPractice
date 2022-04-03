@@ -133,3 +133,19 @@ var person = {
         console.log(this.name + " says Hello" + arg) 
     }
 }
+
+// for in loop
+let forObject = {
+    a: 10,
+    b: 14,
+    c: 20,
+}
+
+for(const property in forObject){
+    console.log(`${property}: ${forObject[property]}`)
+}
+
+let forArray = [34, 45, 67];
+for(let element of forArray){
+    console.log(element)
+}

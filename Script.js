@@ -90,3 +90,194 @@
 // }
 
 // printFizzBuzz()
+
+// breakTestFunction   it should return 3 * br
+function breakTest(br){
+    let i = 0;
+    while(i  < 6){
+          if(i == 3){
+              break;
+          }
+
+          i += 1;
+    }
+
+    return i * br;
+}
+
+console.log('breakTestfunction:', breakTest(4))
+
+
+// switch
+
+let city = "Pune";
+
+switch(city){
+   case "Pune": 
+         console.log("Shivaji Maharaj");
+         break;
+   case "Mumbai":
+         console.log("Bombay old name");
+         break;
+   case "Paris":
+        console.log("Fashion Statement");
+         break;
+  default:
+      console.log("Atlanta is my home");
+      break;
+}
+
+// doWhile loop
+
+let stringM = '';
+let i = 0;
+
+do {
+    i++;
+    stringM += i;
+
+} while( i < 10);
+
+console.log('stringM:', stringM)    // 012345678910
+
+// empty
+let fullArr = [1, 5, 7, 9];
+for(let i = 0; i < fullArr.length; fullArr[i++] = 0 )
+
+console.log("Empty:", fullArr)  // [0, 0, 0, 0]
+
+// for of loop at nodelist of artical
+
+let articalElement = document.querySelectorAll('article > p');   // it brings the nodelist from  dom 
+for(let paragraph of articalElement){
+    paragraph.classList.add('jump')
+}
+
+// rest parameters
+
+function restParamsSum(...args){
+     return args.reduce((a, b) => {
+         return a + b
+     })
+}
+
+console.log(restParamsSum(2, 4, 3))
+// lets make the arguments an array to apply array mathods on it
+function sortArguments() {
+    let args = Array.from(arguments)
+    let sortedArgs = args.sort()
+    return sortedArgs
+  }
+  console.log("sortedArguments:",sortArguments(5, 3, 7, 1));
+
+// arrow functions are not best suited for methods
+'use strict';
+var objTest = {
+    // here arrow function does not create a new scope, still has global scope, window object
+    a : 20,
+    b: ()=> console.log(this.a, this),
+    c: function(){
+        console.log(this.a, this)
+    }
+}
+
+objTest.b()
+objTest.c()
+
+// arrow functions arguments   -- imp
+var arguments = [1, 2, 3];
+var arr = () => arguments[0];
+
+arr(); // 1
+
+function foo(n) {
+  var f = () => arguments[0] + n; // foo's implicit arguments binding. arguments[0] is n
+  return f();
+}
+
+foo(4); // 3 + 3 = 6
+console.log("foo(4)",  foo(4));
+
+let myFoo = p => p * p;
+// concise body syntax, implied "return"
+
+let myFoo2 = (p, Q) => { return p + Q}
+// with block body, explicit "return" needed
+
+function TimeCheck(){
+ return setTimeout(()=>{
+    console.log("1. I will be get printed first");
+
+    setTimeout(()=>{
+        console.log("2. I will be get printed later");
+    }, 8000);
+
+}, 8000);
+
+}
+
+TimeCheck();
+
+// Hackerrank
+  
+//   const arofun = (hacArr) => {
+//       let newArr = hacArr.map((item)=> {
+//           if(item % 2 === 0){
+//               return item * 2
+//           }else {
+//                return item * 3
+//           }
+//       });
+      
+//       return newArr;
+//   }
+
+const arofun = (hacArr) => {
+     let newArr = [];
+     for(let i = 0; i < hacArr.length; i++){
+         if(hacArr[i] % 2 === 0) {
+              newArr.push(hacArr[i] * 2)
+        }
+         else { 
+             newArr.push(hacArr[i] * 3)
+            };
+      }
+    return newArr;
+}
+  console.log("arofun:",  arofun([1, 2, 3, 4, 5]))
+
+  // getter syntax binds an objects property to a function, this function is called
+  // when that property is looked up
+
+  let getObject = {
+     countArr : [2, 3, 4, 5],
+     get lastItem(){
+        if(this.countArr.length  < 3){
+            return `not reached to full length yet.`
+        }
+        return this.countArr[this.countArr.length - 1]
+     }
+    }
+
+   console.log("lastItem:",  getObject.lastItem) 
+
+   //delete getObject.lastItem
+
+   // set syntax binds an object property to a function, this function being called
+   // when there is an attampt to set that property
+
+   let getTest = {
+       set myFun(value){
+           this.prop.push(value);
+       },
+       prop : []
+   }
+
+   getTest.myFun = "Honeywell";
+   getTest.myFun = "MagicdustProductions";
+
+   console.log("getTest.prop:",   getTest.prop);
+   // delete getTest.myFun     -- to delete the setter
+
+
+

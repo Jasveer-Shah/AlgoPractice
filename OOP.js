@@ -24,7 +24,7 @@ function Circle(radius) {
 
 //create a new circle  //new oprator to call the circle function
 // new circle makes a new empty object in the memory
-const newCircle = new Circle(2);
+const newCircle = new Circle(2);  
 console.log(newCircle)   // it will consolelog the newCircle Object
 
 let newRadius = newCircle.radius;
@@ -40,11 +40,11 @@ console.log(newRadius)
 
 // primitives are copied by their value
 // Objects are copied by their reference
-let x = 4;
-let y = x;
- x = 6;
-console.log(x);  // 6
-console.log(y); //4
+// let x = 4;
+// let y = x;
+//  x = 6;
+// console.log(x);  // 6
+// console.log(y); //4
 
 let m = { value : 5};
 let k = m;
@@ -57,11 +57,11 @@ console.log(k)    // { value : 7}
 let number = 10;
 function increase(number){  // here number is in local scope of this function so only available inside
     number++;
-    console.log(number)
+    console.log(number)    // 11
 }
 
 increase(number);
-console.log(number);  // here number is in global scope
+console.log(number);  // here number is in global scope  // 10
 
 // compare
 let objNumber = { value: 40};     // this object { value: 40} is now in memory 
@@ -99,4 +99,19 @@ if('radius' in circle){
     console.log('Circle has a radius')
 }
 
- 
+ // 4/1/2022
+// class declaration creates a class with the given name, using prototype based inheritance.
+
+class Polygon {
+    constructor(width, height){
+      this.area = width * height;
+    }
+
+}
+
+let newPolygon = new Polygon(7, 8);     // it creates a new class object in the memory that inherits
+// all the propertires and functions belong to polygon class and can have it`s own new properties and methods as well.
+console.log("newPolygon area",  newPolygon.area);
+
+newPolygon.color = "pink";
+console.log(newPolygon)   // it prints Polygon {area: 56, color: 'pink'}

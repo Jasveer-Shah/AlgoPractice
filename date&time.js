@@ -1,4 +1,4 @@
-const myInterval = setInterval(myTimer, 1000);
+// const myInterval = setInterval(myTimer, 1000);
 
 function myTimer(){
     let today = new Date();
@@ -31,7 +31,7 @@ scope();   // call
 function scopeVar(){
     for(var i = 0; i < 3; i++){
         setTimeout(() => {
-            console.log(i) // what will be logged    // i has global ascope
+            console.log(i) // what will be logged    // i has global scope
         }, i * 1000);
     }
 }
